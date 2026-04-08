@@ -12,8 +12,8 @@ jobs:
       run: docker exec symmy_task-web-1 python manage.py check
     - name: add missing __init__.py
       run: |
-        docker exec symmy_task-web-1 sh -c "touch core/__init__.py"
-        docker exec symmy_task-web-1 sh -c "touch integration/__init__.py"
+        docker exec symmy_task-web-1 sh -c "touch ./core/__init__.py"
+        docker exec symmy_task-web-1 sh -c "touch ./integration/__init__.py"
     - name: debug files
       run: docker exec symmy_task-web-1 ls -R
     - name: fix perms
