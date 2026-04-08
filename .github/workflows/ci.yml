@@ -10,7 +10,9 @@ jobs:
       run: docker compose up -d
     - name: wait for web container
       run: docker exec symmy_task-web-1 python manage.py check
+    - name: debug files
+      run: docker exec symmy_task-web-1 ls -R
     - name: fix perms
       run: docker exec symmy_task-web-1 chmod u+x ./manage.py
     - name: run tests
-      run: docker exec symmy_task-web-1 ./manage.py test
+      run: docker exec symmy_task-web-1 ./manage.py test --verbosity=2
