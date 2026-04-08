@@ -20,7 +20,7 @@ class TestDataParser(TestCase):
             self.assertDictEqual(product.transformed, expected_data[k])
 
     def test_invalid_data(self):
-        log_text = 'looooooooooooooonooooooooooooonooooooooooooonooooooooooooonooooooooooooonooooooooooooonoooooooooooooong'
+        log_text = 'not long'#error-test will fail
 
         invalid_data = [
             {"id": "SKU-004", "title": "Hrnek", "price_vat_excl": None, "stocks": {"praha": 10}, "attributes": {"color": "černá"}},
